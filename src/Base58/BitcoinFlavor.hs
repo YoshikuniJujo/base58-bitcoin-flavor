@@ -37,7 +37,7 @@ encodeInteger :: Integer -> String
 encodeInteger = reverse . enc
 	where
 	enc n | n < 1 = ""
-	enc n = digits !! (fromIntegral n `mod` 58) : enc (n `div` 58)
+	enc n = digits !! (fromIntegral $ n `mod` 58) : enc (n `div` 58)
 
 decodeInteger :: String -> Maybe Integer
 decodeInteger = dec . reverse
